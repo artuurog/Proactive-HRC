@@ -251,7 +251,7 @@ def draw_panel(fig, ax, mat, cmap_name, title):
     ax.set_yticks(range(n_steps)); ax.set_yticklabels(lbls)
     ax.set_xlabel("Predicted Step", fontsize=8)
     ax.set_ylabel("Ground Truth Step", fontsize=8)
-    ax.set_title(f"{title}  (n={int(mat.sum())})")
+    # ax.set_title(f"{title}  (n={int(mat.sum())})")
     cb = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
     cb.set_label("Row-normalised", fontsize=5.5)
     cb.ax.tick_params(labelsize=5.5)
@@ -320,7 +320,7 @@ def main():
     src.add_argument("--counts-json",
                      help="one JSON file with aggregated confusion-matrix counts")
     ap.add_argument("--memory", default=None, help="step list JSON")
-    ap.add_argument("--output", default="pc_motherboard_llm_confusion_matrix.pdf",
+    ap.add_argument("--output", default="confusion_matrix.pdf",
                     help="output file; extension picks the format (pdf/png/svg)")
     ap.add_argument("--labels", default=None,
                     help='backend=name pairs, e.g. "hf_api=Llama 4 Scout,local=Qwen3"')
